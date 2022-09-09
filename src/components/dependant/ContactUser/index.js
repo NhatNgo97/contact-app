@@ -2,7 +2,7 @@ import Avatar from "../Avatar";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function ContactUser({ id, name, email }) {
+function ContactUser({ id, name, username }) {
   const navigate = useNavigate();
   const state = useSelector((state) => state.contact);
   function handleClick() {
@@ -18,7 +18,7 @@ function ContactUser({ id, name, email }) {
       </div>
       <div className="flex w-full whitespace-nowrap text-ellipsis overflow-hidden flex-col">
         <h1 className="font-bold text-ellipsis overflow-hidden">{name}</h1>
-        <p>{email}</p>
+        <p>{username}</p>
       </div>
     </div>
   );

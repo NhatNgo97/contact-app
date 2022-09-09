@@ -17,7 +17,7 @@ function ContactList() {
                 key={item.id}
                 id={item.id}
                 name={item.name}
-                email={item.email}
+                username={item.username}
               />
             );
           })}
