@@ -9,7 +9,12 @@ const contactSlice = createSlice({
     selectedContactId: null,
     contactList: {},
   },
-  reducers: {},
+  reducers: {
+    selectContact(state, action) {
+      console.log("payload", action.payload);
+      state.selectedContactId = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAsyncContact.pending, (state, action) => {

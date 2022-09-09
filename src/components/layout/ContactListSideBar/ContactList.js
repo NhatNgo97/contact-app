@@ -15,7 +15,7 @@ function ContactList() {
             return (
               <ContactUser
                 key={item.id}
-                id={item.id}
+                contactId={item.id}
                 name={item.name}
                 username={item.username}
               />

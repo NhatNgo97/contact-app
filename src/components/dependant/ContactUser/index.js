@@ -1,18 +1,26 @@
 import Avatar from "../Avatar";
-import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import cx from "classnames";
+import contactSlice from "../../../redux/contactSlice";
 
-function ContactUser({ id, name, username }) {
+function ContactUser({ contactId, name, username }) {
+  const location = useLocation();
   const navigate = useNavigate();
-  const state = useSelector((state) => state.contact);
+  const path = location.pathname;
+  const pathId = path.slice(3 - path.length);
+
+  console.log("pathId", pathId);
+  const classes = cx(
+    "p-2 rounded-md h-20 hover:bg-[#f5f5f5] flex flex-row gap-2 items-center hover:cursor-pointer",
+    { "bg-[#f5f5f5]": parseInt(pathId) === contactId }
+  );
+
   function handleClick() {
-    navigate(`/c/${id}`);
+    navigate(`/c/${contactId}`);
   }
   return (
-    <div
-      onClick={handleClick}
-      className="p-2 rounded-md h-20 hover:bg-[#f5f5f5] flex flex-row gap-2 items-center hover:cursor-pointer"
-    >
+    <div onClick={handleClick} className={classes}>
       <div className="h-16 w-16 flex-shrink-0 rounded-full">
         <Avatar />
       </div>
