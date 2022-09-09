@@ -4,6 +4,7 @@ import ContactListSideBar from "../layout/ContactListSideBar";
 import NavBar from "../layout/NavBar";
 import { useDispatch } from "react-redux";
 import { fetchAsyncContact } from "../../redux/contactSlice";
+import { useLocation } from "react-router-dom";
 
 function AppContainer() {
   const dispatch = useDispatch();
