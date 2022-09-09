@@ -28,7 +28,11 @@ const contactSlice = createSlice({
 export const fetchAsyncContact = createAsyncThunk("contact/fetch", async () => {
   try {
     const response = await contactService.fetchContact();
-    return response.data;
+    const contactList = response.data.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    return contactList;
   } catch (err) {
     throw err;
   }
