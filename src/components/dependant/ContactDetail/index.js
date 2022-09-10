@@ -22,7 +22,7 @@ function ContactDetail({ contact }) {
           <BsThreeDotsVertical />
         </IconButton>
       </div>
-      <div className="flex flex-col h-full justify-evenly  gap-6">
+      <div className="flex flex-col justify-evenly gap-12">
         <div className="self-center flex flex-col items-center">
           <div className="w-24 h-24">
             <Avatar />
@@ -65,7 +65,7 @@ function ContactDetail({ contact }) {
             />
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center p-2">
           <iframe
             title="home"
             width="50%"

@@ -15,13 +15,13 @@ function MainContent() {
   }
 
   return (
-    <div className="flex md:col-span-7 col-span-10 p-4 overflow-scroll  ">
+    <div className="flex md:col-span-7 col-span-10 p-4 overflow-y-scroll ">
       {!id ? (
-        <div className="flex h-full w-full bg-gray-200 rounded-xl justify-center items-center">
+        <div className="flex w-full bg-gray-200 rounded-xl justify-center items-center">
           Select your contact to browse infomation.
         </div>
       ) : contactState.status !== "succeed" ? (
-        <div className="flex h-full w-full  justify-center items-center">
+        <div className="flex w-full  justify-center items-center">
           <LoadingSpinner />
         </div>
       ) : (
