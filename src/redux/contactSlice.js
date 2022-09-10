@@ -7,12 +7,17 @@ const contactSlice = createSlice({
   initialState: {
     status: "idle",
     selectedContactId: null,
+    filter: {
+      searchFilter: "",
+    },
     contactList: {},
   },
   reducers: {
     selectContact(state, action) {
-      console.log("payload", action.payload);
       state.selectedContactId = action.payload;
+    },
+    searchFilter(state, action) {
+      state.filter.searchFilter = action.payload;
     },
   },
   extraReducers: (builder) => {

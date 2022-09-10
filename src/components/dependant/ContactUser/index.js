@@ -10,7 +10,6 @@ function ContactUser({ contactId, name, username }) {
   const path = location.pathname;
   const pathId = path.slice(3 - path.length);
 
-  console.log("pathId", pathId);
   const classes = cx(
     "p-2 rounded-md h-20 hover:bg-[#f5f5f5] flex flex-row gap-2 items-center hover:cursor-pointer",
     { "bg-[#f5f5f5]": parseInt(pathId) === contactId }

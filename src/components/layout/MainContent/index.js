@@ -15,7 +15,7 @@ function MainContent() {
   }
 
   return (
-    <div className="flex md:col-span-7 col-span-10 p-4 overflow-y-scroll ">
+    <div className="flex md:col-span-7 col-span-10 p-4 overflow-auto ">
       {!id ? (
         <div className="flex w-full bg-gray-200 rounded-xl justify-center items-center">
           Select your contact to browse infomation.
