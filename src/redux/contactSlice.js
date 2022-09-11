@@ -10,7 +10,7 @@ const contactSlice = createSlice({
     filter: {
       searchFilter: "",
     },
-    contactList: {},
+    contactList: [],
   },
   reducers: {
     selectContact(state, action) {

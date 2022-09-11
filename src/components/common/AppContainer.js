@@ -4,15 +4,20 @@ import ContactListSideBar from "../layout/ContactListSideBar";
 import NavBar from "../layout/NavBar";
 import { useDispatch } from "react-redux";
 import { fetchAsyncContact } from "../../redux/contactSlice";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function AppContainer() {
   const dispatch = useDispatch();
+  const themeState = useSelector((state) => state.theme.style);
+  const secondaryColor = themeState.secondaryColor;
+
   useEffect(() => {
     dispatch(fetchAsyncContact());
   }, []);
   return (
-    <section className="bg-white h-screen grid grid-rows-layout">
+    <section
+      className={`h-screen grid grid-rows-layout bg-${themeState.pageBackgroundColor} text-${themeState.secondaryColor}`}
+    >
       <NavBar />
       <div className="grid grid-cols-10 row-span-1">
         <ContactListSideBar />

@@ -1,10 +1,7 @@
 import ContactUser from "../../dependant/ContactUser";
 import { useSelector } from "react-redux";
 import ContactUserSkeleton from "../../dependant/ContactUser/ContactUserSkeleton";
-import {
-  remainingContactListSelector,
-  searchFilterSelector,
-} from "../../../redux/selectors";
+import { remainingContactListSelector } from "../../../redux/selectors";
 
 function ContactList() {
   const contactState = useSelector((state) => state.contact);
