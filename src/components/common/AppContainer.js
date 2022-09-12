@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 function AppContainer() {
   const dispatch = useDispatch();
   const themeState = useSelector((state) => state.theme.style);
-  const secondaryColor = themeState.secondaryColor;
 
   useEffect(() => {
     dispatch(fetchAsyncContact());

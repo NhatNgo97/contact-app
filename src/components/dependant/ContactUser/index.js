@@ -10,7 +10,7 @@ function ContactUser({ contactId, name, username }) {
   const path = location.pathname;
   const pathId = path.slice(3 - path.length);
 
-  const selectedStyle = `bg-${themeState.secondaryBackgroundColor} text-${themeState.primaryColor} border-l-4 border-${themeState.primaryColor}`;
+  const selectedStyle = ` bg-${themeState.secondaryBackgroundColor} text-${themeState.primaryColor} border-l-4 border-${themeState.primaryColor} `;
 
   const classes = cx(
     `p-2 rounded-md h-20 hover:bg-${themeState.secondaryBackgroundColor} flex flex-row gap-2 items-center hover:cursor-pointer transition-all `,
