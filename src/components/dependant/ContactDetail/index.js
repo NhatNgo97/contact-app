@@ -31,11 +31,11 @@ function ContactDetail({ contact }) {
           </p>
         </div>
         <InfoFieldList
-          phone={helper.formatPhoneNumber(contact.phone.slice(0, 14))}
+          phone={contact.phone}
           email={contact.email}
-          address={Object.values(contact.address).slice(0, 4).join(", ")}
+          address={contact.address}
           website={contact.website}
-          workplace={contact.company.name}
+          workplace={contact.workplace}
         />
         <div
           className={`flex justify-center p-4 border-2 self-center w-[50%] rounded-xl border-${themeState.primaryColor}`}
@@ -44,7 +44,7 @@ function ContactDetail({ contact }) {
             title="home"
             width="100%"
             height="250px"
-            src={`//maps.google.com/maps?q=${contact.address.geo.lat},${contact.address.geo.lng}&z=15&output=embed`}
+            src={`//maps.google.com/maps?q=${contact.geo.lat},${contact.geo.lng}&z=15&output=embed`}
           />
         </div>
       </div>

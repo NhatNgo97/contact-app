@@ -6,7 +6,7 @@ import { remainingContactListSelector } from "../../../redux/selectors";
 function ContactList() {
   const contactState = useSelector((state) => state.contact);
   const remainingContactList = useSelector(remainingContactListSelector);
-  console.log(remainingContactList);
+  console.log(contactState);
   return (
     <div className="flex flex-col p-2 flex-1">
       {contactState.status !== "succeed"

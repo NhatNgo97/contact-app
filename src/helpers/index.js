@@ -19,6 +19,22 @@ const helper = {
     }
     return phone;
   },
+  mappingContactModel(contact) {
+    return {
+      id: contact.id,
+      name: contact.name,
+      username: contact.username,
+      email: contact.email,
+      address: Object.values(contact.address).slice(0, 4).join(", "),
+      geo: {
+        lat: contact.address.geo.lat,
+        lng: contact.address.geo.lng,
+      },
+      phone: helper.formatPhoneNumber(contact.phone.slice(0, 14)),
+      website: contact.website,
+      workplace: contact.company.name,
+    };
+  },
   theme: {
     light: {
       primaryColor: "blue-500",
