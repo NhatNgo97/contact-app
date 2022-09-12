@@ -51,6 +51,12 @@ const helper = {
       pageBackgroundColor: "black",
     },
   },
+  //to avoid tailwind to remove unused css
+  tailwindCssPurgeSafeList: {
+    text: "text-blue-500 text-white text-black",
+    border: "border-blue-500 border-white",
+    bg: "bg-[#f5f5f5] bg-[#dae0e6] bg-black bg-[#1a1a1b] bg-[#48484c] bg-white",
+  },
 };
 
 export default helper;
