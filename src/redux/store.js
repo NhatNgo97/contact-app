@@ -1,9 +1,9 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import themeSlice from "./themeSlice";
-import userSlice from "./userSlice";
+import contactSlice from "./contactSlice";
 
 const rootReducer = combineReducers({
-  user: userSlice.reducer,
+  contact: contactSlice.reducer,
   theme: themeSlice.reducer,
 });
 

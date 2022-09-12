@@ -1,16 +1,29 @@
+import { useEffect } from "react";
 import AppRouter from "../AppRouter";
-import ContactList from "../layout/ContactList";
+import ContactListSideBar from "../layout/ContactListSideBar";
 import NavBar from "../layout/NavBar";
+import { useDispatch } from "react-redux";
+import { fetchAsyncContact } from "../../redux/contactSlice";
+import { useSelector } from "react-redux";
 
 function AppContainer() {
+  const dispatch = useDispatch();
+  const themeState = useSelector((state) => state.theme.style);
+  const secondaryColor = themeState.secondaryColor;
+
+  useEffect(() => {
+    dispatch(fetchAsyncContact());
+  }, []);
   return (
-    <div className="bg-white">
+    <section
+      className={`h-screen grid grid-rows-layout bg-${themeState.pageBackgroundColor} text-${themeState.secondaryColor}`}
+    >
       <NavBar />
-      <div>
-        <ContactList />
+      <div className="grid grid-cols-10 row-span-1">
+        <ContactListSideBar />
         <AppRouter />
       </div>
-    </div>
+    </section>
   );
 }
 
