@@ -1,15 +1,9 @@
 import { BsPencil, BsThreeDotsVertical } from "react-icons/bs";
 import IconButton from "../../common/IconButton";
 import Avatar from "../Avatar";
-import InfoField from "./InfoField";
-import { AiOutlineMail } from "react-icons/ai";
-import { AiOutlinePhone } from "react-icons/ai";
-import { BsFillGeoAltFill } from "react-icons/bs";
-import { MdHttp } from "react-icons/md";
-import { FaUserFriends } from "react-icons/fa";
-import { AiFillTags } from "react-icons/ai";
 import helper from "../../../helpers";
 import { useSelector } from "react-redux";
+import InfoFieldList from "./InfoFieldList";
 
 function ContactDetail({ contact }) {
   const themeState = useSelector((state) => state.theme.style);
@@ -36,42 +30,16 @@ function ContactDetail({ contact }) {
             @{contact.username}
           </p>
         </div>
-        <div className="flex lg:flex-row flex-col md:justify-around lg:gap-0 gap-6">
-          <div className="flex flex-col gap-6 lg:w-[40%] w-full px-4">
-            <InfoField
-              title="Phone"
-              content={helper.formatPhoneNumber(contact.phone.slice(0, 14))}
-              icon={<AiOutlinePhone />}
-            />
-            <InfoField
-              title="Email"
-              content={contact.email}
-              icon={<AiOutlineMail />}
-            />
-            <InfoField
-              title="Address"
-              content={Object.values(contact.address).slice(0, 4).join(", ")}
-              icon={<BsFillGeoAltFill />}
-            />
-          </div>
-          <div className="flex flex-col gap-6  lg:w-[40%] w-full px-4">
-            <InfoField
-              title="Website"
-              content={contact.website}
-              icon={<MdHttp />}
-            />
-            <InfoField
-              title="Workplace"
-              content={contact.company.name}
-              icon={<FaUserFriends />}
-            />
-            <InfoField
-              content={<button className="">Add private Tag</button>}
-              icon={<AiFillTags />}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center p-4 border-2 self-center w-[50%] rounded-xl ">
+        <InfoFieldList
+          phone={helper.formatPhoneNumber(contact.phone.slice(0, 14))}
+          email={contact.email}
+          address={Object.values(contact.address).slice(0, 4).join(", ")}
+          website={contact.website}
+          workplace={contact.company.name}
+        />
+        <div
+          className={`flex justify-center p-4 border-2 self-center w-[50%] rounded-xl border-${themeState.primaryColor}`}
+        >
           <iframe
             title="home"
             width="100%"
